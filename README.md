@@ -8,7 +8,7 @@
 
 A modern, responsive, and fast personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and DaisyUI.
 
-[🌐 Live Demo](https://quiet-wisp-1b039e.netlify.app/) •
+[🌐 Live Demo](https://aflazur-portfolio.netlify.app/) •
 [💻 GitHub Repository](https://github.com/aflazur/My-Portfolio)
 
 </div>
@@ -147,15 +147,11 @@ npm run preview
 
 ## 🌐 Live Demo
 
-👉 https://quiet-wisp-1b039e.netlify.app/
+👉 https://aflazur-portfolio.netlify.app/
 
 ---
 
 ## 🔗 Relevant Links
-
-### Live Website
-
-https://quiet-wisp-1b039e.netlify.app/
 
 ### GitHub Repository
 
