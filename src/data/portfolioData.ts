@@ -31,7 +31,7 @@ const portfolioData: PortfolioData = {
 
   // EDIT: your real social profile URLs
   socials: [
-    { name: "GitHub", url: "https://github.com/aflazurrahaman40", icon: "github" },
+    { name: "GitHub", url: "https://github.com/aflazur", icon: "github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/aflazur-rahaman-bab6b439a?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: "linkedin" },
     { name: "Twitter", url: "https://twitter.com/yourusername", icon: "twitter" },
     { name: "Facebook", url: "https://web.facebook.com/aflazur.rahaman.1", icon: "facebook" },
