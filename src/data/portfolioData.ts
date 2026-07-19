@@ -32,7 +32,7 @@ const portfolioData: PortfolioData = {
   // EDIT: your real social profile URLs
   socials: [
     { name: "GitHub", url: "https://github.com/aflazur", icon: "github" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/aflazur-rahaman-bab6b439a?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: "linkedin" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/aflazur-rahaman-bab6b439a", icon: "linkedin" },
     { name: "Twitter", url: "https://twitter.com/yourusername", icon: "twitter" },
     { name: "Facebook", url: "https://web.facebook.com/aflazur.rahaman.1", icon: "facebook" },
   ],
@@ -124,7 +124,7 @@ const portfolioData: PortfolioData = {
       longDescription:
         "DevPulse is a Node.js and TypeScript backend built on Express, designed around a clean REST API and a PostgreSQL database. The project involved structuring environment configuration and database connections so the service could run reliably both locally and in a serverless deployment on Vercel, including resolving connection pooling and environment-variable issues specific to serverless environments.",
       liveLink: "https://l2-assignment-2-alpha.vercel.app/",
-      githubLink: "https://github.com/aflazurrahaman40/L2-Assignment-2",
+      githubLink: "https://github.com/aflazur/DevPulse",
       challenges: [
         "Getting a persistent PostgreSQL connection to behave correctly inside Vercel's serverless functions, which spin up and tear down on every request.",
         "Managing environment variables safely across local development and production without leaking secrets into the repository.",

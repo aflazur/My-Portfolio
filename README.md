@@ -1,51 +1,86 @@
-# Aflazur — Personal Portfolio
+# 🌐 My Portfolio
 
-## Live link : https://quiet-wisp-1b039e.netlify.app/
+<div align="center">
 
-A production-ready personal portfolio built with **React + TypeScript + Vite**, styled with
-**Tailwind CSS + DaisyUI**, and routed with **React Router**. All content (bio, skills,
-education, experience, projects, contact info) lives in a single typed data file, so you can
-update the entire site without touching any component code.
+# Hi 👋 I'm Aflazur Rahaman
 
-## Tech Stack
+### 💻 Full Stack Web Developer
 
-- React 19 + TypeScript
+A modern, responsive, and fast personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and DaisyUI.
+
+[🌐 Live Demo](https://quiet-wisp-1b039e.netlify.app/) •
+[💻 GitHub Repository](https://github.com/aflazur/My-Portfolio)
+
+</div>
+
+---
+
+## 📖 Overview
+
+This portfolio website showcases my technical skills, projects, education, and contact information. It is designed with a clean UI, responsive layout, and smooth user experience to represent my professional profile.
+
+---
+
+## ✨ Features
+
+- 🏠 Modern Landing Page
+- 👨‍💻 About Me Section
+- 💼 Projects Showcase
+- 🛠️ Skills Section
+- 🎓 Education Information
+- 📱 Fully Responsive Design
+- ⚡ Fast Performance with Vite
+- 🎨 Modern UI using Tailwind CSS & DaisyUI
+- 🔄 Client-side Routing with React Router
+- 📞 Contact Section
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React 19
+- TypeScript
 - Vite
-- Tailwind CSS v4 + DaisyUI
-- React Router v7
-- lucide-react (icons)
 
-## Getting Started
+### Styling
 
-```bash
-npm install
-npm run dev       # start local dev server (http://localhost:5173)
-npm run build     # production build -> dist/
-npm run preview   # preview the production build locally
-```
+- Tailwind CSS
+- DaisyUI
 
-## ✏️ Personalize Your Content
+### Routing
 
-Everything you need to edit lives in **`src/data/portfolioData.ts`**. Look for the `EDIT:`
-comments — these mark the fields you should fill in with your real information:
+- React Router DOM
 
-| Field | What to do |
-|---|---|
-| `photo` | Replace with your own photo. Put the image file in `public/` (e.g. `public/photo.jpg`) and set `photo: "/photo.jpg"`. |
-| `resumeUrl` | Put your resume PDF in `public/resume.pdf` and keep `resumeUrl: "/resume.pdf"`. The button downloads it automatically. |
-| `email`, `phone`, `whatsapp`, `location` | Your real contact details. |
-| `socials` | Your real GitHub / LinkedIn / Twitter / Facebook URLs. |
-| `education` | Your university/institution details. |
-| `experience` | Add real jobs/internships. Leave the array empty (`[]`) to show the "open to opportunities" state. |
-| `projects` | Add, remove, or edit projects. Each project automatically gets its own detail page at `/projects/:id`. |
+### Icons
 
-No other files need to change for basic content updates — the whole site is data-driven.
+- Lucide React
 
-### Adding a new project
+---
 
-Add a new object to the `projects` array in `portfolioData.ts` with a unique `id` — a card and a
-full detail page (`/projects/your-id`) are generated automatically.
+## 📦 Dependencies
 
+### Production
+
+- react
+- react-dom
+- react-router-dom
+- lucide-react
+
+### Development
+
+- vite
+- typescript
+- tailwindcss
+- @tailwindcss/vite
+- daisyui
+- postcss
+- autoprefixer
+- @vitejs/plugin-react
+- oxlint
+
+---
 
 ## Project Structure
 
@@ -57,3 +92,113 @@ src/
   types/          # shared TypeScript interfaces
   index.css       # design tokens + global styles
 ```
+
+---
+
+## 🚀 Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/aflazur/My-Portfolio.git
+```
+
+---
+
+### Navigate to Project
+
+```bash
+cd My-Portfolio
+```
+
+---
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🌐 Live Demo
+
+👉 https://quiet-wisp-1b039e.netlify.app/
+
+---
+
+## 🔗 Relevant Links
+
+### Live Website
+
+https://quiet-wisp-1b039e.netlify.app/
+
+### GitHub Repository
+
+https://github.com/aflazur/My-Portfolio
+
+### GitHub Profile
+
+https://github.com/aflazur
+
+---
+
+## 📈 Future Improvements
+
+- 🌙 Dark / Light Theme Toggle
+- 🌍 Multi-language Support
+- 📄 Resume Download
+- 📝 Blog Section
+- 📊 GitHub Contribution Graph
+- 💬 Testimonials Section
+- 📧 Functional Contact Form
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and feature requests are always welcome.
+
+Feel free to fork this repository and submit a Pull Request.
+
+---
+
+## 👨‍💻 Author
+
+### Aflazur Rahaman
+
+💻 Full Stack Web Developer
+
+---
+
+<div align="center">
+
+⭐ If you like this project, don't forget to give it a Star!
+
+Made with ❤️ by **Aflazur Rahaman**
+
+</div>
