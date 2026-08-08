@@ -21,7 +21,7 @@ const portfolioData: PortfolioData = {
   photo: "/Aflazur.png",
 
   // EDIT: replace with the real path to your resume, e.g. "/resume.pdf" placed inside /public
-  resumeUrl: "/aflazur-cv.pdf",
+  resumeUrl: "https://drive.google.com/file/d/16PMSo36DIkxE5zWiKbWuFjpQNCa4qR7W/view?usp=sharing",
 
   // EDIT: your real contact details
   email: "mdaflazurrahaman2022@gmail.com",
