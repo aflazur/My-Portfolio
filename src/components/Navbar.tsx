@@ -1,7 +1,10 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Download } from "lucide-react";
-import portfolioData from "../data/portfolioData";
+import portfolioData from "@/data/portfolioData";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -15,8 +18,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -26,8 +29,8 @@ export default function Navbar() {
 
   const goToSection = (href: string) => {
     setOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/" + href);
+    if (pathname !== "/") {
+      router.push("/" + href);
     } else {
       const el = document.querySelector(href);
       el?.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +45,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
         <Link
-          to="/"
+          href="/"
           className="font-mono text-lg font-semibold text-[var(--heading)]"
           onClick={() => setOpen(false)}
         >

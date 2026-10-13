@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { Project } from "../types";
+import type { Project } from "@/types";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="card-hover flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)]">
       <div className="relative h-48 w-full overflow-hidden bg-[var(--surface-2)]">
-        <img
+        <Image
           src={project.image}
           alt={project.name}
-          className="h-full w-full object-cover"
-          loading="lazy"
+          fill
+          sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
         />
         {project.featured && (
           <span className="absolute left-3 top-3 rounded-full border border-[var(--accent)]/50 bg-[var(--bg)]/80 px-3 py-1 font-mono text-xs text-[var(--accent)] backdrop-blur">
@@ -37,7 +39,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <Link
-          to={`/projects/${project.id}`}
+          href={`/projects/${project.id}`}
           className="mt-5 flex items-center justify-center gap-1.5 rounded-md border border-[var(--accent)] py-2.5 font-mono text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent-soft)]"
         >
           View Details

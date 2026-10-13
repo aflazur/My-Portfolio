@@ -1,5 +1,6 @@
 import { Sparkles } from "lucide-react";
-import portfolioData from "../data/portfolioData";
+import portfolioData from "@/data/portfolioData";
+import SectionHeading from "./SectionHeading";
 
 export default function About() {
   return (
@@ -38,16 +39,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
-}
-
-export function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return (
-    <div>
-      <p className="font-mono text-sm text-[var(--accent)]">{eyebrow}</p>
-      <h2 className="mt-2 font-display text-3xl font-semibold text-[var(--heading)] sm:text-4xl">
-        {title}
-      </h2>
-    </div>
   );
 }

@@ -1,5 +1,5 @@
-import portfolioData from "../data/portfolioData";
-import { SectionHeading } from "./About";
+import portfolioData from "@/data/portfolioData";
+import SectionHeading from "./SectionHeading";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {

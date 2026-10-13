@@ -1,200 +1,57 @@
-# 🌐 My Portfolio
+# Aflazur Rahaman — Portfolio (Next.js)
 
-<div align="center">
+Next.js (App Router) + TypeScript + Tailwind CSS v4 + DaisyUI + lucide-react.
+Same design and logic as the original React/Vite version.
 
-# Hi 👋 I'm Aflazur Rahaman
-
-### 💻 Full Stack Web Developer
-
-A modern, responsive, and fast personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and DaisyUI.
-
-[🌐 Live Demo](https://aflazur-portfolio.netlify.app/) •
-[💻 GitHub Repository](https://github.com/aflazur/My-Portfolio)
-
-</div>
-
----
-
-## 📖 Overview
-
-This portfolio website showcases my technical skills, projects, education, and contact information. It is designed with a clean UI, responsive layout, and smooth user experience to represent my professional profile.
-
----
-
-## ✨ Features
-
-- 🏠 Modern Landing Page
-- 👨‍💻 About Me Section
-- 💼 Projects Showcase
-- 🛠️ Skills Section
-- 🎓 Education Information
-- 📱 Fully Responsive Design
-- ⚡ Fast Performance with Vite
-- 🎨 Modern UI using Tailwind CSS & DaisyUI
-- 🔄 Client-side Routing with React Router
-- 📞 Contact Section
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-- React 19
-- TypeScript
-- Vite
-
-### Styling
-
-- Tailwind CSS
-- DaisyUI
-
-### Routing
-
-- React Router DOM
-
-### Icons
-
-- Lucide React
-
----
-
-## 📦 Dependencies
-
-### Production
-
-- react
-- react-dom
-- react-router-dom
-- lucide-react
-
-### Development
-
-- vite
-- typescript
-- tailwindcss
-- @tailwindcss/vite
-- daisyui
-- postcss
-- autoprefixer
-- @vitejs/plugin-react
-- oxlint
-
----
-
-## Project Structure
-
-```
-src/
-  components/     # Navbar, Hero, About, Skills, Education, Experience, Projects, ProjectCard, Contact, Footer
-  pages/          # Home.tsx (all sections), ProjectDetail.tsx (per-project page)
-  data/           # portfolioData.ts — EDIT THIS to personalize the site
-  types/          # shared TypeScript interfaces
-  index.css       # design tokens + global styles
-```
-
----
-
-## 🚀 Getting Started
-
-### Clone Repository
-
-```bash
-git clone https://github.com/aflazur/My-Portfolio.git
-```
-
----
-
-### Navigate to Project
-
-```bash
-cd My-Portfolio
-```
-
----
-
-### Install Dependencies
+## Run locally
 
 ```bash
 npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build (run this before deploying to check for errors)
+npm start        # serve the production build
 ```
 
----
+## How to update your content
 
-### Run Development Server
+All content lives in `src/data/`. You never need to touch component code.
 
-```bash
-npm run dev
+| What you want to change | File |
+| --- | --- |
+| **Skills** (add / remove / change level) | `src/data/skills.ts` |
+| Name, intro, photo, resume link, contact, socials, about, education, experience, **projects** | `src/data/portfolioData.ts` |
+
+### Add a skill
+Open `src/data/skills.ts` and add one line inside a category:
+
+```ts
+{ name: "Docker", level: 70 },
 ```
 
----
+`level` is 1–100 (the width of the progress bar). To add a whole new category, copy one
+`{ category: ..., icon: ..., skills: [...] }` block.
 
-### Build for Production
+### Add a project
+Add a new object to `projects` in `src/data/portfolioData.ts` (copy an existing one and change the
+text). Its `id` becomes the URL: `id: "my-app"` → `/projects/my-app`.
 
-```bash
-npm run build
-```
+### Project images
+- Local image: put it in `public/` and use `"/my-image.png"`.
+- Remote image: add its hostname to `remotePatterns` in `next.config.ts`
+  (only `images.unsplash.com` is allowed by default).
 
----
+### Photo / resume
+- Photo: replace `public/Aflazur.png` (or change `photo` in `portfolioData.ts`).
+- Resume: `resumeUrl` is currently a Google Drive link. You can also put a PDF in `public/`
+  (e.g. `public/aflazur-cv.pdf`) and set `resumeUrl: "/aflazur-cv.pdf"`.
 
-### Preview Production Build
+## Deploy on Vercel
 
-```bash
-npm run preview
-```
+1. Push this folder to a GitHub repository.
+2. Go to <https://vercel.com/new>, import the repository.
+3. Framework Preset will be detected as **Next.js**. Leave all settings as default and click **Deploy**.
+4. After that, every `git push` to `main` redeploys automatically — so updating a skill is:
+   edit `src/data/skills.ts` → commit → push → site updates in about a minute.
 
----
-
-## 🌐 Live Demo
-
-👉 https://aflazur-portfolio.netlify.app/
-
----
-
-## 🔗 Relevant Links
-
-### GitHub Repository
-
-https://github.com/aflazur/My-Portfolio
-
-### GitHub Profile
-
-https://github.com/aflazur
-
----
-
-## 📈 Future Improvements
-
-- 🌙 Dark / Light Theme Toggle
-- 🌍 Multi-language Support
-- 📄 Resume Download
-- 📝 Blog Section
-- 📊 GitHub Contribution Graph
-- 💬 Testimonials Section
-- 📧 Functional Contact Form
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and feature requests are always welcome.
-
-Feel free to fork this repository and submit a Pull Request.
-
----
-
-## 👨‍💻 Author
-
-### Aflazur Rahaman
-
-💻 Full Stack Web Developer
-
----
-
-<div align="center">
-
-⭐ If you like this project, don't forget to give it a Star!
-
-Made with ❤️ by **Aflazur Rahaman**
-
-</div>
+No environment variables are needed. `vercel.json` / `_redirects` are not needed in Next.js
+(routing is built in).

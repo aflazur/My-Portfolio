@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
-import { Download, Mail, Github, Linkedin, Twitter, Facebook } from "lucide-react";
-import portfolioData from "../data/portfolioData";
+"use client";
 
-const ICONS: Record<string, React.ReactNode> = {
+import { useEffect, useState, type ReactNode } from "react";
+import Image from "next/image";
+import { Download, Mail, Github, Linkedin, Twitter, Facebook } from "lucide-react";
+import portfolioData from "@/data/portfolioData";
+
+const ICONS: Record<string, ReactNode> = {
   github: <Github size={19} />,
   linkedin: <Linkedin size={19} />,
   twitter: <Twitter size={19} />,
@@ -109,9 +112,12 @@ export default function Hero() {
             <div className="absolute -right-3 -top-3 h-3 w-3 rounded-full bg-[var(--accent)]" />
             <div className="absolute -bottom-3 -left-3 h-3 w-3 rounded-full bg-[var(--accent-2)]" />
             <div className="h-56 w-56 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_20px_60px_-20px_rgba(94,234,212,0.35)] sm:h-72 sm:w-72">
-              <img
+              <Image
                 src={portfolioData.photo}
                 alt={portfolioData.name}
+                width={288}
+                height={288}
+                priority
                 className="h-full w-full object-cover"
               />
             </div>

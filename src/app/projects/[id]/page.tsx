@@ -1,49 +1,53 @@
-import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github, AlertTriangle, Rocket } from "lucide-react";
-import portfolioData from "../data/portfolioData";
+import portfolioData from "@/data/portfolioData";
 
-export default function ProjectDetail() {
-  const { id } = useParams();
+type Props = { params: Promise<{ id: string }> };
+
+// Pre-build one static page per project in portfolioData.ts
+export function generateStaticParams() {
+  return portfolioData.projects.map((p) => ({ id: p.id }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const project = portfolioData.projects.find((p) => p.id === id);
+  if (!project) return { title: "Project not found" };
+  return {
+    title: `${project.name} | ${portfolioData.name}`,
+    description: project.description,
+  };
+}
+
+export default async function ProjectDetail({ params }: Props) {
+  const { id } = await params;
   const project = portfolioData.projects.find((p) => p.id === id);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  if (!project) {
-    return (
-      <div className="mx-auto max-w-3xl px-5 py-24 text-center">
-        <h1 className="font-display text-3xl font-semibold text-[var(--heading)]">
-          Project not found
-        </h1>
-        <p className="mt-3 text-[var(--text-dim)]">
-          The project you're looking for doesn't exist or may have been moved.
-        </p>
-        <Link
-          to="/#projects"
-          className="mt-6 inline-flex items-center gap-2 rounded-md border border-[var(--accent)] px-5 py-2.5 font-mono text-sm text-[var(--accent)] hover:bg-[var(--accent-soft)]"
-        >
-          <ArrowLeft size={16} />
-          Back to projects
-        </Link>
-      </div>
-    );
-  }
+  if (!project) notFound();
 
   return (
     <div className="px-5 py-14 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <Link
-          to="/#projects"
+          href="/#projects"
           className="inline-flex items-center gap-2 font-mono text-sm text-[var(--text-dim)] hover:text-[var(--accent)]"
         >
           <ArrowLeft size={16} />
           Back to projects
         </Link>
 
-        <div className="mt-6 overflow-hidden rounded-xl border border-[var(--border)]">
-          <img src={project.image} alt={project.name} className="h-72 w-full object-cover" />
+        <div className="relative mt-6 h-72 w-full overflow-hidden rounded-xl border border-[var(--border)]">
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            sizes="(min-width: 896px) 896px, 100vw"
+            className="object-cover"
+            priority
+          />
         </div>
 
         <div className="mt-8 flex flex-wrap items-start justify-between gap-4">
@@ -74,6 +78,17 @@ export default function ProjectDetail() {
               >
                 <Github size={16} />
                 Client Code
+              </a>
+            )}
+            {project.backendLink && (
+              <a
+                href={project.backendLink}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-md border border-[var(--border)] px-4 py-2.5 font-mono text-sm text-[var(--heading)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                <Github size={16} />
+                Server Code
               </a>
             )}
           </div>

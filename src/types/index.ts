@@ -42,6 +42,7 @@ export interface Project {
   longDescription: string;
   liveLink?: string;
   githubLink?: string;
+  backendLink?: string;
   challenges: string[];
   improvements: string[];
   featured?: boolean;

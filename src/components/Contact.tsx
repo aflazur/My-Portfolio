@@ -1,6 +1,8 @@
+"use client";
+
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
-import portfolioData from "../data/portfolioData";
-import { SectionHeading } from "./About";
+import portfolioData from "@/data/portfolioData";
+import SectionHeading from "./SectionHeading";
 
 export default function Contact() {
   const items = [

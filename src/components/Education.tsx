@@ -1,6 +1,6 @@
 import { GraduationCap } from "lucide-react";
-import portfolioData from "../data/portfolioData";
-import { SectionHeading } from "./About";
+import portfolioData from "@/data/portfolioData";
+import SectionHeading from "./SectionHeading";
 
 export default function Education() {
   return (
