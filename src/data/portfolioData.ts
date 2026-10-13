@@ -44,11 +44,6 @@ const portfolioData: PortfolioData = {
       icon: "linkedin",
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com/yourusername",
-      icon: "twitter",
-    },
-    {
       name: "Facebook",
       url: "https://web.facebook.com/aflazur.rahaman.1",
       icon: "facebook",
